@@ -408,7 +408,7 @@ def FDwfAnalogInStatusData(hdwf, idxChannel,
     if cdData is not None:
         return _FDwfAnalogInStatusData(hdwf, idxChannel,
                                        rgdVoltData_or_cdData, cdData)
-    cdData = rgdVoltData_or_cdData
+    cdData = int(rgdVoltData_or_cdData)
     rgdVoltData = (c_double * cdData)()
     _FDwfAnalogInStatusData(hdwf, idxChannel, rgdVoltData, cdData)
     return tuple(rgdVoltData)
